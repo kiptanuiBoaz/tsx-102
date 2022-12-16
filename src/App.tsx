@@ -1,26 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.css';
+import { Person } from './components/Person';
 
-function App() {
-  const name: string = "App"; 
-  const age : number = 23;
-  const isMarried : boolean = false;
 
-  const getName = (name: string):number =>{
-    if(name==="App") {
-      return 29;
-    }else{
-      return 0;
-    }
-  }
+//FC is the funtional component type
+const App: FC = () => {
+
+
 
 
   return (
     <div className="App">
-     
-   <p> {name}</p>
-   <p>{age}</p>
-   <p>{isMarried? "Married" : "Not Married"}</p>
+
+      <Person name='Pedro' email='ped@gmail.com' age={23} />
     </div>
   );
 }
