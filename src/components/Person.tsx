@@ -17,12 +17,14 @@ interface Props {
 export const Person: FC<Props> = ({ name, email, age , hairColor}) => {
 
     const [country, setCountry] = useState<string | null>("");
-
-
+    type NameType = "Pedro" | "Jack";
+    const nameoftype :NameType = "Jack"
+    console.log(nameoftype);
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setCountry(event.target.value)
+        setCountry(event.target.value);
 
     }
+
     return (
         <div>
             <p>{name}</p>

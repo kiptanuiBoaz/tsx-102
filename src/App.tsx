@@ -10,7 +10,7 @@ const App: FC = () => {
   return (
     <div className="App">
 
-      <Person name='Pedro' email='ped@gmail.com' age={23} />
+      <Person name={undefined} email='ped@gmail.com' age={23} hairColor={HairColor.Pink} />
     </div>
   );
 }
