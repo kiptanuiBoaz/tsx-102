@@ -1,23 +1,23 @@
 import React, { FC, useState, ChangeEvent } from 'react';
 
-//making the props optional
-interface Props {
-    name: string | undefined,
-    age?: number,
-    email?: string,
-    // getName: (name:string) => string;
-
+export enum HairColor{
+    Blonde= "Your hair is blode, good for you!",
+    Brown = "Cool hair color",
+    Pink = "pink ! nice one"
 }
 
-export const Person: FC<Props> = ({ name, email, age }) => {
+//making the props optional
+interface Props {
+    age?: number,
+    name: string | undefined,
+    email?: string,
+    hairColor: HairColor
+}
+
+export const Person: FC<Props> = ({ name, email, age , hairColor}) => {
 
     const [country, setCountry] = useState<string | null>("");
 
-    enum HairColor{
-        Blonde= "Your hair is blode, good for you!",
-        Brown = "Cool hair color",
-        Pink = "pink ! nice one"
-    }
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         setCountry(event.target.value)
@@ -30,7 +30,7 @@ export const Person: FC<Props> = ({ name, email, age }) => {
             <p>{age}</p>
             <input placeholder='Write down your counrty' onChange={handleChange} />
             <p>{country}</p>
-            {HairColor.Blonde}
+            {hairColor}
         </div>
 
     )

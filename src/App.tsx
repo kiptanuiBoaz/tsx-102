@@ -1,12 +1,10 @@
 import React, { FC } from 'react';
 import './App.css';
-import { Person } from './components/Person';
+import { Person , HairColor } from './components/Person';
 
 
 //FC is the funtional component type
 const App: FC = () => {
-
-
 
 
   return (
